@@ -15,28 +15,31 @@ def personal_sum(*args):
 
 
 def calculate_average(*args):
-    length_ = 0
-    for i in args:
-        try:
-            if i.is_integer() or i.isfloat():
-                length_ += 1
-
-        except AttributeError:
-            length_ = length_
-
     try:
-        calc_ = personal_sum(*args) / length_
-        # calc_ = result/ length_
-    except ZeroDivisionError:
-        calc_ = 0
-    return calc_
+        length_ = len(args)
+        print(length_)
+    except:
+    res = personal_sum(*args)
+    average_ = res[0] / length_
+    print(f'Среднее арифметическое :{average_}')
+    # except TypeError:
+    #     print(f'Некорректный тип данных для подсчёта суммы')
+    #
+    # print(average_)
+    #
+    # try:
+    #     # calc_ = res / length_
+    #     calc_ = res/ length_
+    # except ZeroDivisionError:
+    #     calc_ = 0
+    # return calc_
 
 
 
-# print(personal_sum(1, 2, 'h', 4, 5, 8))
-# print(calculate_average(1, 2, 'h', 4, 5, 8))
+# print(personal_sum(1, 'h', 4, 5, 8))
+print(f'Результат 0: {calculate_average(1, 14, 4, 5, 8)}')
 
-print(f'Результат 1: {calculate_average("1, 2, 3")}') # Строка перебирается, но каждый символ - строковый тип
-print(f'Результат 2: {calculate_average([1, "Строка", 3, "Ещё Строка"])}') # Учитываются только 1 и 3
-print(f'Результат 3: {calculate_average(567)}') # Передана не коллекция
-print(f'Результат 4: {calculate_average([42, 15, 36, 13])}') # Всё должно работать
+# print(f'Результат 1: {calculate_average("1, 2, 3")}') # Строка перебирается, но каждый символ - строковый тип
+# print(f'Результат 2: {calculate_average([1, "Строка", 3, "Ещё Строка"])}') # Учитываются только 1 и 3
+# print(f'Результат 3: {calculate_average(567)}') # Передана не коллекция
+# print(f'Результат 4: {calculate_average([42, 15, 36, 13])}') # Всё должно работать
